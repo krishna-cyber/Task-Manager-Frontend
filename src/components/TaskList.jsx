@@ -21,7 +21,7 @@ const TaskList = () => {
   const fetchData = async () => {
     setLoading(true);
     await server
-      .get("http://localhost:3000/tasks")
+      .get("/tasks")
       .then((res) => {
         setLoading(false);
         setTasks(res.data);
@@ -35,7 +35,7 @@ const TaskList = () => {
   };
   const deletetask = async (id) => {
     await server
-      .delete(`http://localhost:3000/tasks/${id}`)
+      .delete(`/tasks/${id}`)
       .then((res) => {
         fetchData();
         toast.success("Task deleted successfully !");
@@ -55,7 +55,7 @@ const TaskList = () => {
   const completetask = async (task) => {
     task.completed = true;
     await server
-      .put(`http://localhost:3000/tasks/${task._id}`, task)
+      .put(`/tasks/${task._id}`, task)
       .then((res) => {
         fetchData();
         toast.success("Task completed successfully !");
