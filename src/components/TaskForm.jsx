@@ -8,7 +8,7 @@ const TaskForm = ({ fetchData, editing, editTask }) => {
   const onSubmit = async (data) => {
     if (!editing) {
       await server
-        .post("http://localhost:3000/tasks/add", data)
+        .post("tasks/add", data)
         .then((res) => {
           toast.success("Task added successfully !");
           fetchData();
@@ -24,7 +24,7 @@ const TaskForm = ({ fetchData, editing, editTask }) => {
   const updateData = async (editTask) => {
     editTask.title = getValues("title");
     await server
-      .put(`http://localhost:3000/tasks/${editTask._id}`, editTask)
+      .put(`/tasks/${editTask._id}`, editTask)
       .then((res) => {
         toast.success("Task updated successfully !");
         fetchData();
