@@ -6,9 +6,9 @@ This is a frontend task manager app built with React and designed to work with a
 
 1.  Clone the repo
 
-        ```bash
-        gh repo clone krishna-cyber/Task-Manager-Frontend
-        ```
+    ```bash
+           gh repo clone krishna-cyber/Task-Manager-Frontend
+    ```
 
 2.  Install NPM packages
 
