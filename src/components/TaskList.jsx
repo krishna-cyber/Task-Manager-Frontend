@@ -1,4 +1,4 @@
-import axios from "axios";
+import server from "../../public/config/server";
 import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import Task from "./Task";
@@ -20,7 +20,7 @@ const TaskList = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    await axios
+    await server
       .get("http://localhost:3000/tasks")
       .then((res) => {
         setLoading(false);
@@ -34,7 +34,7 @@ const TaskList = () => {
       });
   };
   const deletetask = async (id) => {
-    await axios
+    await server
       .delete(`http://localhost:3000/tasks/${id}`)
       .then((res) => {
         fetchData();
@@ -54,7 +54,7 @@ const TaskList = () => {
 
   const completetask = async (task) => {
     task.completed = true;
-    await axios
+    await server
       .put(`http://localhost:3000/tasks/${task._id}`, task)
       .then((res) => {
         fetchData();

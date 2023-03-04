@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const server = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://krishna-tiwari.onrender.com",
   timeout: 1000,
 });
 
