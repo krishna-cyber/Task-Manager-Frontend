@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply p-1 px-3 rounded-md bg-purple-500 text-white;
+  }
+  .btn:hover {
+    @apply bg-purple-600;
+  }
+  .tasks {
+    @apply flex justify-between p-3 mt-3;
+  }
+  .bg {
+    @apply rounded-md border-l-8 bg-slate-300;
+  }
+  .complete {
+    @apply border-green-500;
+  }
+  .incomplete {
+    @apply border-red-500;
+  }
+}
